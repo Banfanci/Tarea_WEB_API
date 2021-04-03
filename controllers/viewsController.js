@@ -53,6 +53,10 @@ exports.getResults = catchAsync(async (req, res, next) => {
 
   const allCharacters = await getCharacters([], name, 0);
 
+  if (allCharacters.length === 0) {
+    return next(new AppError('No Results', 400));
+  }
+
   res.status(200).render('results', {
     title: 'Results',
     allCharacters,

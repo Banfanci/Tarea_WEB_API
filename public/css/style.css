@@ -348,3 +348,26 @@ form.example::after {
   display: table;
 }
 
+.result,
+.result:link,
+.result:visited {
+  color: #444;
+  font-size: 4rem;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: block;
+  background-color: #eee;
+  margin: 1rem;
+}
+.result:hover,
+.result:active {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  text-shadow: 0 0.5rem 0.8rem black;
+}
