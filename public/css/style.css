@@ -327,7 +327,6 @@ form.example input[type=text] {
 
 /* Style the submit button */
 form.example button {
-  width: 10%;
   padding: 10px;
   background: #29773e;
   color: white;
