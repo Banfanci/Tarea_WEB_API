@@ -1,0 +1,313 @@
+:root {
+  --section-rotate: 9vw;
+}
+
+::-moz-selection {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+::selection {
+  background-color: #55c57a;
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  color: #777;
+  padding: 3rem;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.main {
+  background-color: #f7f7f7;
+  padding: 2rem 6rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.span-all-rows {
+  grid-row: 1 / -1;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.ma-bt-md {
+  margin-bottom: 3rem !important;
+}
+
+.ma-bt-lg {
+  margin-bottom: 3.5rem !important;
+}
+
+.right {
+  text-align: right !important;
+}
+
+.header {
+  background-color: #29773e;
+  padding: 0 5rem;
+  height: 8rem;
+  position: relative;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__logo img {
+  height: 6rem;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.footer {
+  background-color: #29773e;
+  padding: 4rem 4rem 3rem 4rem;
+  font-size: 1.5rem;
+  text-align: end;
+}
+.footer__copyright {
+  color: #eee;
+  font-weight: lighter;
+}
+.error {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 80rem;
+  text-align: center;
+}
+.error__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.error__msg {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 3rem;
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.ep{
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 2rem;
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 1rem;
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  margin: 0rem 0rem 0rem 1rem;
+}
+
+.heading-secondary {
+  color: #444;
+  font-size: 4rem;
+  margin-top: 4rem;
+}
+
+.info{
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.5rem;
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+.nav__el,
+.nav__el:link,
+.nav__el:visited {
+  color: #eee;
+  text-transform: uppercase;
+  font-size: 4rem;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.nav__el:hover,
+.nav__el:active {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  text-shadow: 0 0.7rem 1rem black;
+}
+
+.character,
+.character:link,
+.character:visited {
+  color: #444;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.character:hover,
+.character:active {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  text-shadow: 0 0.5rem 0.8rem black;
+}
+
+.profile-photo{
+  height: 50rem;
+  border: 5px solid black;
+}
+
+.profile{
+  width: 100%;
+  display: inline-block;
+}
+.profile-info{
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 4rem;
+}
+
+.profile-name{
+  font-size: 3rem;
+  color: #444;
+  display: inline-block;
+}
+
+.profile-nickname{
+  font-size: 4rem;
+  color: black;
+  display: inline-block;
+  font-weight: bolder;
+}
+
+.profile-charid{
+  font-size: 2rem;
+  color: #444;
+  font-weight: bolder;
+}
+
+.profile-status{
+  font-size: 2rem;
+  color: #444;
+  font-weight: bolder;
+}
+
+.profile-category{
+  font-size: 2rem;
+  color: #444;
+  font-weight: bolder;
+}
+
+.profile-occupation{
+  font-size: 2rem;
+  color: #444;
+  font-weight: bolder;
+}
+
+.profile-portrayed{
+  font-size: 2rem;
+  color: #444;
+  font-weight: bolder;
+}

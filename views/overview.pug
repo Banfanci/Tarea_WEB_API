@@ -1,0 +1,34 @@
+extends base
+
+block content
+  main.main
+
+    h1.heading-secondary Breaking Bad
+    each season, key in bBad
+      button.collapsible Season #{key}
+      div.content
+        each ep in season
+          button.collapsible.ep #{ep.episode}. #{ep.title}
+          div.content
+            .info Episode ID: #{ep.episode_id}
+            .info Air Date: #{ep.air_date}
+            .info Characters: /&nbsp
+              each pj in ep.characters
+                - const slugPj = pj.replace(/ /g,"_");
+                a.character(href=`/character/${slugPj}`) #{pj} /&nbsp
+
+    h1.heading-secondary Better Call Saul
+    each season, key in bSaul
+      button.collapsible Season #{key}
+      div.content
+        each ep in season
+          button.collapsible.ep #{ep.episode}. #{ep.title}
+          div.content            
+            .info Episode ID: #{ep.episode_id}
+            .info Air Date: #{ep.air_date}
+            .info Characters: /&nbsp
+              each pj in ep.characters
+                - const slugPj = pj.replace(/ /g,"_");
+                a.character(href=`/character/${slugPj}`) #{pj} /&nbsp
+
+          

@@ -1,0 +1,42 @@
+extends base
+
+block content
+  main.main
+    .profile
+      img.profile-photo(src=`${character.img}` alt='Character Image')
+      .profile-info
+        .profile-nickname #{character.nickname}
+        .profile-name (#{character.name})
+        .profile-charid Char ID:#{character.char_id}
+        .profile-status Status: #{character.status}
+        .profile-occupation Occupation: #{character.occupation}
+        .profile-category Category: #{character.category}
+        .profile-portrayed Portrayed: #{character.portrayed}
+
+    h1.heading-secondary Breaking Bad
+    each season, key in bBadAppearance
+      button.collapsible Season #{key}
+      div.content
+        each ep in season
+          button.collapsible.ep #{ep.episode}. #{ep.title}
+          div.content
+            .info Episode ID: #{ep.episode_id}
+            .info Air Date: #{ep.air_date}
+            .info Characters: /&nbsp
+              each pj in ep.characters
+                - const slugPj = pj.replace(/ /g,"_");
+                a.character(href=`/character/${slugPj}`) #{pj} /&nbsp
+
+    h1.heading-secondary Better Call Saul
+    each season, key in bSaulAppearance
+      button.collapsible Season #{key}
+      div.content
+        each ep in season
+          button.collapsible.ep #{ep.episode}. #{ep.title}
+          div.content            
+            .info Episode ID: #{ep.episode_id}
+            .info Air Date: #{ep.air_date}
+            .info Characters: /&nbsp
+              each pj in ep.characters
+                - const slugPj = pj.replace(/ /g,"_");
+                a.character(href=`/character/${slugPj}`) #{pj} /&nbsp
