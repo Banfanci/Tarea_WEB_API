@@ -7,11 +7,15 @@ block content
       .profile-info
         .profile-nickname #{character.nickname}
         .profile-name (#{character.name})
-        .profile-charid Char ID:#{character.char_id}
+        .profile-charid Char ID: #{character.char_id}
         .profile-status Status: #{character.status}
         .profile-occupation Occupation: #{character.occupation}
         .profile-category Category: #{character.category}
         .profile-portrayed Portrayed: #{character.portrayed}
+        if quotes.length > 0
+          .profile-quotes Quotes
+          each quote in quotes
+            .profile-quote "#{quote.quote}"
 
     h1.heading-secondary Breaking Bad
     each season, key in bBadAppearance

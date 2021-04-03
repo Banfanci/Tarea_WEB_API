@@ -2,6 +2,10 @@ extends base
 
 block content
   main.main
+    .center
+      form.example(action="/search", novalidate, method="post")
+        input(type="text", placeholder="Search..", name="search")
+        button(type="submit") Search
 
     h1.heading-secondary Breaking Bad
     each season, key in bBad

@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.get('/', viewsController.getOverview);
 router.get('/character/:name', viewsController.getCharacter);
+router.post('/search', viewsController.getResults);
 
 module.exports = router;

@@ -18,19 +18,10 @@ exports.getQuotes = async (name) => {
   return res.data;
 };
 
-exports.getCharacter = async (id) => {
+exports.getCharacterByName = async (name, offset) => {
   const res = await axios({
     method: 'GET',
-    url: `https://tarea-1-breaking-bad.herokuapp.com/api/characters/${id}`,
-  });
-
-  return res.data;
-};
-
-exports.getCharacterByName = async (name) => {
-  const res = await axios({
-    method: 'GET',
-    url: `https://tarea-1-breaking-bad.herokuapp.com/api/characters?name=${name}`,
+    url: `https://tarea-1-breaking-bad.herokuapp.com/api/characters?name=${name}&limit=10&offset=${offset}`,
   });
 
   return res.data;

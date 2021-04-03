@@ -24,6 +24,16 @@ const getEpisodesBySeason = (episodes) => {
   return [bBad, bSaul];
 };
 
+const getCharacters = async (allCharacters, name, offset) => {
+  const characters = await breakingBad.getCharacterByName(name, offset);
+  allCharacters.push(...characters);
+  if (characters.length === 10) {
+    const res = await getCharacters(allCharacters, name, offset + 10);
+    return res;
+  }
+  return allCharacters;
+};
+
 exports.getOverview = catchAsync(async (req, res, next) => {
   const episodes = await breakingBad.getEpisodes();
   const episodesBySeason = getEpisodesBySeason(episodes);
@@ -38,14 +48,27 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getResults = catchAsync(async (req, res, next) => {
+  const name = req.body.search.replace(/ /g, '+');
+
+  const allCharacters = await getCharacters([], name, 0);
+
+  res.status(200).render('results', {
+    title: 'Results',
+    allCharacters,
+  });
+});
+
 exports.getCharacter = catchAsync(async (req, res, next) => {
   const name = req.params.name.replace('_', '+');
-  const characters = await breakingBad.getCharacterByName(name);
+  const characters = await breakingBad.getCharacterByName(name, 0);
   const character = characters[0];
 
   if (characters.length === 0) {
     return next(new AppError('Character Not Found', 400));
   }
+
+  const quotes = await breakingBad.getQuotes(name);
 
   const episodes = await breakingBad.getEpisodes();
 
@@ -74,5 +97,6 @@ exports.getCharacter = catchAsync(async (req, res, next) => {
     character,
     bBadAppearance,
     bSaulAppearance,
+    quotes,
   });
 });

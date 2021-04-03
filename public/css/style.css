@@ -1,17 +1,3 @@
-:root {
-  --section-rotate: 9vw;
-}
-
-::-moz-selection {
-  background-color: #55c57a;
-  color: #fff;
-}
-
-::selection {
-  background-color: #55c57a;
-  color: #fff;
-}
-
 *,
 *::before,
 *::after {
@@ -32,7 +18,6 @@ body {
   font-weight: 300;
   font-family: 'Lato', sans-serif;
   color: #777;
-  padding: 3rem;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,3 +296,55 @@ body {
   color: #444;
   font-weight: bolder;
 }
+
+.profile-quotes{
+  font-size: 3rem;
+  color: #444;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.profile-quote{
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.center{
+  text-align: center;
+  padding-top: 3rem;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 40%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  width: 10%;
+  padding: 10px;
+  background: #29773e;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #246936;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
